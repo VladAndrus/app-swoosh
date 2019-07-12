@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="RDR-Mk-o3R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-Av-4vU">
                                 <rect key="frame" x="128" y="40" width="119" height="20"/>
                             </imageView>
@@ -43,6 +46,9 @@
                                 <state key="normal" title="GET STARTED">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="QdO-kq-RDq" kind="show" id="5IB-1E-lKn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO ALL IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww8-Pt-S9J">
                                 <rect key="frame" x="55" y="145" width="265" height="72.5"/>
@@ -53,9 +59,6 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="RDR-Mk-o3R">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -167,14 +170,27 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-YO-gNR">
+                                <rect key="frame" x="0.0" y="30" width="64" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="6zL-Rt-lsk"/>
+                                    <constraint firstAttribute="height" constant="46" id="oBF-zw-Tzx"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="TR2-nx-eh4" kind="unwind" unwindAction="unwindFromSkillVCFor:" id="flH-vf-V6N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JoT-Ri-VIa" firstAttribute="trailing" secondItem="ypJ-Hc-gVo" secondAttribute="trailing" constant="20" id="1kB-XA-AOS"/>
+                            <constraint firstItem="1ix-YO-gNR" firstAttribute="leading" secondItem="JoT-Ri-VIa" secondAttribute="leading" id="5sb-6u-4IB"/>
                             <constraint firstItem="mve-x9-qh5" firstAttribute="top" secondItem="JoT-Ri-VIa" secondAttribute="top" constant="20" id="68k-G2-t8c"/>
                             <constraint firstItem="TzN-yC-hTB" firstAttribute="leading" secondItem="JoT-Ri-VIa" secondAttribute="leading" id="8f3-dU-toD"/>
                             <constraint firstItem="JOS-4h-wDU" firstAttribute="leading" secondItem="JoT-Ri-VIa" secondAttribute="leading" constant="20" id="Lm1-MJ-mbS"/>
                             <constraint firstItem="TzN-yC-hTB" firstAttribute="bottom" secondItem="JoT-Ri-VIa" secondAttribute="bottom" id="amF-y4-mow"/>
+                            <constraint firstItem="1ix-YO-gNR" firstAttribute="top" secondItem="Alx-kO-udt" secondAttribute="topMargin" constant="10" id="b7k-VI-nV2"/>
                             <constraint firstItem="JOS-4h-wDU" firstAttribute="top" secondItem="mve-x9-qh5" secondAttribute="bottom" constant="50" id="cCk-0Q-eYU"/>
                             <constraint firstItem="JoT-Ri-VIa" firstAttribute="trailing" secondItem="JOS-4h-wDU" secondAttribute="trailing" constant="20" id="dvi-c1-Qdz"/>
                             <constraint firstItem="mve-x9-qh5" firstAttribute="leading" secondItem="JoT-Ri-VIa" secondAttribute="leading" id="hHy-EI-EDV"/>
@@ -188,6 +204,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOh-uI-FG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TR2-nx-eh4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="26.53673163418291"/>
         </scene>
@@ -286,6 +303,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
